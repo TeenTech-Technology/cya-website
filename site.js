@@ -1,0 +1,2 @@
+document.querySelector('.menu').onclick=function(){var u=document.querySelector('nav ul');var o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)};
+document.querySelectorAll('form[data-mail]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var lines=[];new FormData(f).forEach(function(v,k){lines.push(k+': '+v)});location.href='mailto:infocya260@gmail.com?subject='+encodeURIComponent(f.dataset.mail)+'&body='+encodeURIComponent(lines.join('\n'))})});
