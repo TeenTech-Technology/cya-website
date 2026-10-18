@@ -88,3 +88,4 @@ img.zoom{cursor:zoom-in;transition:transform .25s,filter .25s}img.zoom:hover{fil
 .lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:10px;box-shadow:0 10px 40px #000a}
 .lb button{position:absolute;background:#ffffff22;color:#fff;border:0;font-size:34px;width:52px;height:52px;border-radius:50%;cursor:pointer;line-height:1}
 .lb button:hover{background:#ffffff44}.lbx{top:16px;right:16px}.lbp{left:14px;top:50%;transform:translateY(-50%)}.lbn{right:14px;top:50%;transform:translateY(-50%)}
+.fmsg{margin-top:12px;font-weight:600;font-size:15px}.fmsg.ok{color:#137a3a}.fmsg.err{color:#b3261e}.fmsg a{text-decoration:underline}
