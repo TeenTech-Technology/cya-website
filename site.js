@@ -1,2 +1,11 @@
 document.querySelector('.menu').onclick=function(){var u=document.querySelector('nav ul');var o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)};
 document.querySelectorAll('form[data-mail]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var lines=[];new FormData(f).forEach(function(v,k){lines.push(k+': '+v)});location.href='mailto:infocya260@gmail.com?subject='+encodeURIComponent(f.dataset.mail)+'&body='+encodeURIComponent(lines.join('\n'))})});
+
+(function(){var imgs=[].slice.call(document.querySelectorAll('main img,section img,header img')).filter(function(i){return !i.closest('nav,footer,.brand')});if(!imgs.length)return;
+var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<button class="lbx" aria-label="Close">×</button><button class="lbp" aria-label="Previous">‹</button><img alt=""><button class="lbn" aria-label="Next">›</button>';document.body.appendChild(lb);
+var big=lb.querySelector('img'),cur=0;function show(n){cur=(n+imgs.length)%imgs.length;big.src=imgs[cur].currentSrc||imgs[cur].src;big.alt=imgs[cur].alt;lb.classList.add('on');document.body.style.overflow='hidden'}
+function hide(){lb.classList.remove('on');document.body.style.overflow=''}
+imgs.forEach(function(im,i){im.classList.add('zoom');im.tabIndex=0;im.setAttribute('role','button');im.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();show(i)});im.addEventListener('keydown',function(e){if(e.key==='Enter'){show(i)}})});
+lb.querySelector('.lbx').onclick=hide;lb.querySelector('.lbp').onclick=function(e){e.stopPropagation();show(cur-1)};lb.querySelector('.lbn').onclick=function(e){e.stopPropagation();show(cur+1)};
+lb.addEventListener('click',function(e){if(e.target===lb)hide()});document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+var x0=null;lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX});lb.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(cur+(d<0?1:-1));x0=null});})();

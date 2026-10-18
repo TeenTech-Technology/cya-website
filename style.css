@@ -83,3 +83,8 @@ button.btn{cursor:pointer;font-family:inherit}
 @media(max-width:900px){
 nav ul.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:16px 24px;gap:14px;box-shadow:0 10px 20px #0002}
 .ph{padding:56px 0}.ph h1{font-size:32px}.gal{grid-template-columns:1fr 1fr}}
+img.zoom{cursor:zoom-in;transition:transform .25s,filter .25s}img.zoom:hover{filter:brightness(1.08)}
+.lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:999;padding:20px}.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:10px;box-shadow:0 10px 40px #000a}
+.lb button{position:absolute;background:#ffffff22;color:#fff;border:0;font-size:34px;width:52px;height:52px;border-radius:50%;cursor:pointer;line-height:1}
+.lb button:hover{background:#ffffff44}.lbx{top:16px;right:16px}.lbp{left:14px;top:50%;transform:translateY(-50%)}.lbn{right:14px;top:50%;transform:translateY(-50%)}
