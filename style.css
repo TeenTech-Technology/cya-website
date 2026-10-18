@@ -1,91 +1,870 @@
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--b:#0b3c8c;--bd:#072a63;--c:#c8742c;--l:#eef3fb;--t:#1b2333}
-body{font-family:"Segoe UI",Roboto,Arial,sans-serif;color:var(--t);line-height:1.6;background:#fff}
-img{max-width:100%;display:block}
-.w{max-width:1200px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 12px #0001;z-index:9}
-nav .w{display:flex;align-items:center;justify-content:space-between;height:72px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--b);font-size:18px}
-.brand img{width:46px;height:46px;border-radius:50%}
-nav ul{display:flex;gap:24px;list-style:none;font-weight:600;font-size:15px}
-nav ul a{color:var(--t);text-decoration:none}
-.btn{display:inline-block;padding:13px 26px;border-radius:40px;font-weight:700;text-decoration:none;font-size:15px;border:2px solid transparent}
-.bc{background:var(--c);color:#fff}.bo{border-color:#fff;color:#fff}.bb{background:var(--b);color:#fff}
-.menu{display:none;font-size:26px;color:var(--b)}
-.hero{background:linear-gradient(100deg,#072a63ee 35%,#0b3c8c88),url(img/hero.webp) center/cover;color:#fff;padding:120px 0 130px}
-.hero h1{font-size:58px;line-height:1.1;max-width:760px;margin:14px 0 20px}
-.hero h1 span{color:#f3a65f}
-.hero p{max-width:600px;font-size:19px;opacity:.92;margin-bottom:32px}
-.tag{display:inline-block;background:#ffffff22;padding:6px 14px;border-radius:30px;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
-.hero .btn{margin-right:12px;margin-bottom:10px}
-section{padding:90px 0}
-.k{color:var(--c);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
-h2{font-size:38px;color:var(--bd);line-height:1.2;margin:8px 0 18px}
-.lead{font-size:18px;max-width:720px;color:#4a5568}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.two img{border-radius:20px;box-shadow:0 20px 40px #0b3c8c33}
-.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 8px 30px #0b3c8c14;border-top:4px solid var(--c)}
-.card h3{color:var(--b);margin-bottom:8px;font-size:20px}
-.vals{display:flex;flex-wrap:wrap;gap:8px}.vals span{background:var(--l);color:var(--b);padding:5px 12px;border-radius:20px;font-size:14px;font-weight:600}
-.alt{background:var(--l)}
-.focus{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px}
-.f{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #0b3c8c14}
-.f img{height:150px;width:100%;object-fit:cover}.f div{padding:18px}
-.f b{display:block;color:var(--c);font-size:13px}.f h3{font-size:17px;color:var(--bd);line-height:1.3}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0}
-.st{background:var(--b);color:#fff;border-radius:18px;padding:26px}
-.st strong{font-size:40px;display:block;color:#f3a65f;line-height:1.1}
-.imp{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.im{display:flex;gap:20px;background:#fff;border-radius:18px;padding:18px;box-shadow:0 8px 24px #0b3c8c14}
-.im img{width:190px;height:150px;object-fit:cover;border-radius:12px;flex-shrink:0}
-.im h3{color:var(--bd);font-size:18px;margin-bottom:6px}.im p{font-size:15px;color:#4a5568}
-.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
-.p{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #0b3c8c14;text-align:center}
-.p img{height:170px;width:100%;object-fit:cover}.p h3{padding:16px 10px 4px;color:var(--b)}.p small{display:block;padding:0 12px 18px;color:#667}
-.up{background:linear-gradient(120deg,var(--bd),var(--b));color:#fff}
-.up h2{color:#fff}.ups{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px}
-.u{background:#ffffff14;border:1px solid #ffffff33;border-radius:18px;padding:30px}
-.u .d{background:var(--c);display:inline-block;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:12px}
-.u h3{font-size:24px;margin-bottom:6px}
-.ct{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
-.ci p{margin-bottom:16px;font-size:16px}.ci b{color:var(--b);display:block}
-.cf,.form{background:#fff;border-radius:20px;padding:32px;box-shadow:0 10px 40px #0b3c8c1a}
-label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
-input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #d3dbe8;border-radius:10px;font:inherit;font-size:15px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-footer{background:#061f4a;color:#c9d4ea;padding:50px 0 24px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h4{color:#fff;margin-bottom:10px}footer a{color:#c9d4ea;display:block;text-decoration:none;font-size:14px}
-.cr{border-top:1px solid #ffffff22;margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;font-size:14px;flex-wrap:wrap;gap:8px}
-.cr strong{color:#f3a65f}
-.soc span{display:inline-block;background:var(--l);color:var(--b);padding:6px 12px;border-radius:20px;margin:0 6px 6px 0;font-size:13px;font-weight:600}
-.qr{display:flex;gap:18px;align-items:center;background:var(--l);border-radius:14px;padding:18px;margin-top:22px}
-.qr .box{width:90px;height:90px;flex-shrink:0;background:repeating-conic-gradient(var(--bd) 0 25%,#fff 0 50%) 0 0/18px 18px;border:6px solid #fff;outline:2px solid var(--bd)}
-@media(max-width:900px){
-nav ul{display:none}nav .btn{display:none}.brand{font-size:16px}.menu{display:block}
-.hero{padding:70px 0 80px}.hero h1{font-size:36px}.hero p{font-size:16px}
-section{padding:60px 0}h2{font-size:28px}
-.two,.mvv,.imp,.ups,.ct,.fg,.row{grid-template-columns:1fr}
-.focus{grid-template-columns:1fr 1fr}.stats,.parts{grid-template-columns:1fr 1fr}
-.im{flex-direction:column}.im img{width:100%;height:180px}
-.st strong{font-size:30px}}
-.brand{text-decoration:none}
-nav ul a.on{color:var(--c)}
-.menu{background:none;border:0;cursor:pointer}
-.ph{background:linear-gradient(100deg,#072a63f0 40%,#0b3c8c99),var(--img) center/cover;color:#fff;padding:80px 0}
-.ph h1{font-size:46px;line-height:1.15;margin:12px 0}.ph p{max-width:640px;font-size:18px;opacity:.92}
-.note{background:#fff7ee;border-left:4px solid var(--c);padding:12px 16px;border-radius:8px;font-size:14px;margin-top:16px}
-.list{margin:12px 0 0 20px}.list li{margin-bottom:6px}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.gal img{border-radius:14px;height:220px;width:100%;object-fit:cover}
-.cta{text-align:center}.cta .btn{margin:6px}
-button.btn{cursor:pointer;font-family:inherit}
-@media(max-width:900px){
-nav ul.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:16px 24px;gap:14px;box-shadow:0 10px 20px #0002}
-.ph{padding:56px 0}.ph h1{font-size:32px}.gal{grid-template-columns:1fr 1fr}}
-img.zoom{cursor:zoom-in;transition:transform .25s,filter .25s}img.zoom:hover{filter:brightness(1.08)}
-.lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:999;padding:20px}.lb.on{display:flex}
-.lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:10px;box-shadow:0 10px 40px #000a}
-.lb button{position:absolute;background:#ffffff22;color:#fff;border:0;font-size:34px;width:52px;height:52px;border-radius:50%;cursor:pointer;line-height:1}
-.lb button:hover{background:#ffffff44}.lbx{top:16px;right:16px}.lbp{left:14px;top:50%;transform:translateY(-50%)}.lbn{right:14px;top:50%;transform:translateY(-50%)}
-.fmsg{margin-top:12px;font-weight:600;font-size:15px}.fmsg.ok{color:#137a3a}.fmsg.err{color:#b3261e}.fmsg a{text-decoration:underline}
+/* =========================================================
+   Chingola Youth Association (CYA) - website styles
+   ---------------------------------------------------------
+   One file styles every page. Sections below:
+     1. Colours & base
+     2. Navigation (top menu bar)
+     3. Buttons
+     4. Hero (home page banner)
+     5. Page header (banner on the other pages)
+     6. Sections, headings & text
+     7. Cards (mission / vision / values)
+     8. Thematic focus areas
+     9. Stats, impact & photo gallery
+    10. Partners
+    11. Upcoming events
+    12. Contact & forms
+    13. Footer
+    14. Photo viewer (lightbox)
+    15. Responsive / mobile (screens 900px wide or less)
+   ========================================================= */
+
+
+/* ---------- 1. Colours & base ---------- */
+
+/* Reset: no default spacing, sizes include padding and border */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Site colours. Change a colour here and it changes everywhere.
+   --b  = main blue        --bd = dark blue
+   --c  = copper / orange  --l  = light blue background
+   --t  = text colour */
+:root {
+  --b: #0b3c8c;
+  --bd: #072a63;
+  --c: #c8742c;
+  --l: #eef3fb;
+  --t: #1b2333;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--t);
+  line-height: 1.6;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* .w = "wrapper": centres the content and limits its width */
+.w {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ---------- 2. Navigation (top menu bar) ---------- */
+
+nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 12px #0001;
+  z-index: 9;
+}
+
+nav .w {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Logo + "Chingola Youth Association" name */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--b);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+/* Menu links */
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+nav ul a {
+  color: var(--t);
+  text-decoration: none;
+}
+
+/* The link of the page you are on (class="on") */
+nav ul a.on {
+  color: var(--c);
+}
+
+/* The ☰ menu button (only shown on phones, see section 15) */
+.menu {
+  display: none;
+  font-size: 26px;
+  color: var(--b);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+
+/* ---------- 3. Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 15px;
+  border: 2px solid transparent;
+}
+
+/* bc = copper button, bo = white outline button, bb = blue button */
+.bc {
+  background: var(--c);
+  color: #fff;
+}
+
+.bo {
+  border-color: #fff;
+  color: #fff;
+}
+
+.bb {
+  background: var(--b);
+  color: #fff;
+}
+
+button.btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+/* ---------- 4. Hero (home page banner) ---------- */
+
+/* The background photo is img/hero.webp */
+.hero {
+  background: linear-gradient(100deg, #072a63ee 35%, #0b3c8c88), url(img/hero.webp) center/cover;
+  color: #fff;
+  padding: 120px 0 130px;
+}
+
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  max-width: 760px;
+  margin: 14px 0 20px;
+}
+
+.hero h1 span {
+  color: #f3a65f;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 19px;
+  opacity: .92;
+  margin-bottom: 32px;
+}
+
+/* Small rounded label above a heading, e.g. "YOUTH-LED · CHINGOLA, ZAMBIA" */
+.tag {
+  display: inline-block;
+  background: #ffffff22;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero .btn {
+  margin-right: 12px;
+  margin-bottom: 10px;
+}
+
+
+/* ---------- 5. Page header (banner on the other pages) ---------- */
+
+/* The photo comes from the page itself: style="--img:url(img/....webp)" */
+.ph {
+  background: linear-gradient(100deg, #072a63f0 40%, #0b3c8c99), var(--img) center/cover;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.ph h1 {
+  font-size: 46px;
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+.ph p {
+  max-width: 640px;
+  font-size: 18px;
+  opacity: .92;
+}
+
+
+/* ---------- 6. Sections, headings & text ---------- */
+
+section {
+  padding: 90px 0;
+}
+
+/* Light blue background section */
+.alt {
+  background: var(--l);
+}
+
+/* .k = small copper heading above an h2, e.g. "ABOUT US" */
+.k {
+  color: var(--c);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+h2 {
+  font-size: 38px;
+  color: var(--bd);
+  line-height: 1.2;
+  margin: 8px 0 18px;
+}
+
+/* Bigger intro paragraph */
+.lead {
+  font-size: 18px;
+  max-width: 720px;
+  color: #4a5568;
+}
+
+/* Two columns side by side (text + photo) */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.two img {
+  border-radius: 20px;
+  box-shadow: 0 20px 40px #0b3c8c33;
+}
+
+/* Bullet lists */
+.list {
+  margin: 12px 0 0 20px;
+}
+
+.list li {
+  margin-bottom: 6px;
+}
+
+/* Centred "call to action" box */
+.cta {
+  text-align: center;
+}
+
+.cta .btn {
+  margin: 6px;
+}
+
+
+/* ---------- 7. Cards (mission / vision / values) ---------- */
+
+.mvv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 8px 30px #0b3c8c14;
+  border-top: 4px solid var(--c);
+}
+
+.card h3 {
+  color: var(--b);
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+/* Core values "pills" */
+.vals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vals span {
+  background: var(--l);
+  color: var(--b);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ---------- 8. Thematic focus areas ---------- */
+
+.focus {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.f {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px #0b3c8c14;
+}
+
+.f img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.f div {
+  padding: 18px;
+}
+
+/* The number (01, 02, ...) */
+.f b {
+  display: block;
+  color: var(--c);
+  font-size: 13px;
+}
+
+.f h3 {
+  font-size: 17px;
+  color: var(--bd);
+  line-height: 1.3;
+}
+
+
+/* ---------- 9. Stats, impact & photo gallery ---------- */
+
+/* The four blue number boxes (200+, 300+, ...) */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.st {
+  background: var(--b);
+  color: #fff;
+  border-radius: 18px;
+  padding: 26px;
+}
+
+.st strong {
+  font-size: 40px;
+  display: block;
+  color: #f3a65f;
+  line-height: 1.1;
+}
+
+/* Impact / programme items: photo on the left, text on the right */
+.imp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.im {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 24px #0b3c8c14;
+}
+
+.im img {
+  width: 190px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.im h3 {
+  color: var(--bd);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.im p {
+  font-size: 15px;
+  color: #4a5568;
+}
+
+/* Photo gallery grid (Impact page) */
+.gal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.gal img {
+  border-radius: 14px;
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* ---------- 10. Partners ---------- */
+
+.parts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* One partner card */
+.p {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px #0b3c8c14;
+  text-align: center;
+}
+
+.p img {
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.p h3 {
+  padding: 16px 10px 4px;
+  color: var(--b);
+}
+
+.p small {
+  display: block;
+  padding: 0 12px 18px;
+  color: #667;
+}
+
+
+/* ---------- 11. Upcoming events ---------- */
+
+/* Dark blue section */
+.up {
+  background: linear-gradient(120deg, var(--bd), var(--b));
+  color: #fff;
+}
+
+.up h2 {
+  color: #fff;
+}
+
+.ups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin-top: 36px;
+}
+
+/* One event box */
+.u {
+  background: #ffffff14;
+  border: 1px solid #ffffff33;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+/* "Dates to be confirmed" label */
+.u .d {
+  background: var(--c);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.u h3 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+
+/* ---------- 12. Contact & forms ---------- */
+
+/* Contact details on the left, form on the right */
+.ct {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.ci p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.ci b {
+  color: var(--b);
+  display: block;
+}
+
+/* Social media "pills" */
+.soc span {
+  display: inline-block;
+  background: var(--l);
+  color: var(--b);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 0 6px 6px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* The white form box (.cf = contact form, .form = registration form) */
+.cf,
+.form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 40px #0b3c8c1a;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 14px 0 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #d3dbe8;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
+}
+
+/* Two form fields side by side */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Small note box under a form */
+.note {
+  background: #fff7ee;
+  border-left: 4px solid var(--c);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+/* Message shown after sending a form (added by site.js):
+   .ok = green "Thank you", .err = red "Sorry, it could not send" */
+.fmsg {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.fmsg.ok {
+  color: #137a3a;
+}
+
+.fmsg.err {
+  color: #b3261e;
+}
+
+.fmsg a {
+  text-decoration: underline;
+}
+
+/* "QR check-in (planned)" box on the Register page */
+.qr {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: var(--l);
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 22px;
+}
+
+/* Checkered square that stands in for a QR code */
+.qr .box {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  background: repeating-conic-gradient(var(--bd) 0 25%, #fff 0 50%) 0 0/18px 18px;
+  border: 6px solid #fff;
+  outline: 2px solid var(--bd);
+}
+
+
+/* ---------- 13. Footer ---------- */
+
+footer {
+  background: #061f4a;
+  color: #c9d4ea;
+  padding: 50px 0 24px;
+}
+
+/* Footer columns */
+.fg {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+
+footer h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #c9d4ea;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Bottom line: "© Chingola Youth Association" + "Website by ..." */
+.cr {
+  border-top: 1px solid #ffffff22;
+  margin-top: 30px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cr strong {
+  color: #f3a65f;
+}
+
+
+/* ---------- 14. Photo viewer (lightbox) ---------- */
+
+/* Photos you can click (site.js adds the "zoom" class) */
+img.zoom {
+  cursor: zoom-in;
+  transition: transform .25s, filter .25s;
+}
+
+img.zoom:hover {
+  filter: brightness(1.08);
+}
+
+/* The dark full-screen viewer. Hidden until site.js adds the "on" class */
+.lb {
+  position: fixed;
+  inset: 0;
+  background: #000d;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.lb.on {
+  display: flex;
+}
+
+/* The big photo */
+.lb img {
+  max-width: 92vw;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px #000a;
+}
+
+/* Round buttons: close (×), previous (‹), next (›) */
+.lb button {
+  position: absolute;
+  background: #ffffff22;
+  color: #fff;
+  border: 0;
+  font-size: 34px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lb button:hover {
+  background: #ffffff44;
+}
+
+/* Close button (top right) */
+.lbx {
+  top: 16px;
+  right: 16px;
+}
+
+/* Previous arrow (left) */
+.lbp {
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Next arrow (right) */
+.lbn {
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* ---------- 15. Responsive / mobile (screens 900px wide or less) ---------- */
+
+/* Keep this block LAST so it can override the rules above */
+@media (max-width: 900px) {
+
+  /* Navigation: hide the menu links and Register button, show ☰ */
+  nav ul {
+    display: none;
+  }
+
+  nav .btn {
+    display: none;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  /* Menu opened with ☰ (site.js adds the "open" class) */
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 16px 24px;
+    gap: 14px;
+    box-shadow: 0 10px 20px #0002;
+  }
+
+  /* Smaller banners and headings */
+  .hero {
+    padding: 70px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .ph {
+    padding: 56px 0;
+  }
+
+  .ph h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  /* Side-by-side layouts become one column */
+  .two,
+  .mvv,
+  .imp,
+  .ups,
+  .ct,
+  .fg,
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Grids become two columns */
+  .focus {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats,
+  .parts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gal {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Impact items: photo on top of the text */
+  .im {
+    flex-direction: column;
+  }
+
+  .im img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .st strong {
+    font-size: 30px;
+  }
+}
