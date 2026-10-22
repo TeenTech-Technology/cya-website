@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Event feedback | Chingola Youth Association</title>
+    <meta name="description" content="Tell Chingola Youth Association how a past event went for you.">
+    <meta name="theme-color" content="#0b3c8c">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Event feedback | Chingola Youth Association">
+    <meta property="og:description" content="Tell Chingola Youth Association how a past event went for you.">
+    <meta property="og:url" content="https://teentech-technology.github.io/cya-website/feedback.html">
+    <meta property="og:image" content="https://teentech-technology.github.io/cya-website/img/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://teentech-technology.github.io/cya-website/feedback.html">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- Navigation (top menu bar) -->
+    <nav>
+      <div class="w">
+        <a class="brand" href="index.html"><img src="img/logo.webp" alt="CYA logo">Chingola Youth Association</a>
+        <ul>
+          <li><a href="index.html" class="">Home</a></li>
+          <li><a href="about.html" class="">About</a></li>
+          <li><a href="programmes.html" class="">Programmes</a></li>
+          <li><a href="impact.html" class="">Impact</a></li>
+          <li><a href="partners.html" class="">Partners</a></li>
+          <li><a href="events.html" class="">Events</a></li>
+          <li><a href="gallery.html" class="">Gallery</a></li>
+          <li><a href="volunteer.html" class="">Volunteer</a></li>
+          <li><a href="contact.html" class="">Contact</a></li>
+        </ul>
+        <a class="btn bc" href="register.html" style="padding:10px 20px">Register</a>
+        <button class="menu" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </nav>
+
+    <!-- Page header (banner with background photo) -->
+    <header class="ph" style="--img:url(img/indaba-hero.webp)">
+      <div class="w">
+        <span class="tag">Feedback</span>
+        <h1>Tell us how it <span style="color:#f3a65f">went</span></h1>
+        <p>Your feedback helps us make every event better.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="w two" style="align-items:start">
+        <div>
+          <span class="k">Event feedback</span>
+          <h2>Thank you for coming</h2>
+          <p class="lead">Choose the event you attended, give it a rating and share anything you would like us to know. It only takes a minute.</p>
+        </div>
+        <form class="form" id="ffb" novalidate>
+          <h3 style="color:var(--bd);font-size:22px">Feedback form</h3>
+          <label for="fe">Event</label>
+          <select id="fe" name="event" required><option value="">Loading events...</option></select>
+          <fieldset class="stars" id="fr"><legend>Your rating</legend>
+            <input type="radio" name="rating" id="r5" value="5" required><label for="r5" title="5 - Excellent">5</label>
+            <input type="radio" name="rating" id="r4" value="4"><label for="r4" title="4 - Good">4</label>
+            <input type="radio" name="rating" id="r3" value="3"><label for="r3" title="3 - Okay">3</label>
+            <input type="radio" name="rating" id="r2" value="2"><label for="r2" title="2 - Not great">2</label>
+            <input type="radio" name="rating" id="r1" value="1"><label for="r1" title="1 - Poor">1</label>
+          </fieldset>
+          <p class="sub" style="font-size:13px;color:#667">1 = poor, 5 = excellent</p>
+          <label for="fc">Comments <em>(optional)</em></label>
+          <textarea id="fc" name="comments" rows="4" maxlength="2000"></textarea>
+          <label for="fn">Your name <em>(optional)</em></label>
+          <input id="fn" name="name" maxlength="120" autocomplete="name">
+          <div class="hp" aria-hidden="true"><label for="fw">Leave this empty</label><input id="fw" name="website" tabindex="-1" autocomplete="off"></div>
+          <button class="btn bc" type="submit" style="width:100%;margin-top:14px">Send feedback</button>
+          <p class="fmsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="w">
+        <div class="fg">
+          <div>
+            <a class="brand" href="index.html" style="color:#fff"><img src="img/logo.webp" alt="">Chingola Youth Association</a>
+            <p style="margin-top:12px;font-size:14px;max-width:360px">We exist for the best interests of Chingola youths, together as one. Registered under the National Youth Development Council (NYDC).</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="about.html">About</a>
+            <a href="programmes.html">Programmes</a>
+            <a href="impact.html">Impact</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html">Event feedback</a>
+            <a href="register.html">Register</a>
+            <a href="volunteer.html">Volunteer</a>
+            <a href="partner.html">Partner with us</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <span class="fc"><svg class="fi" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Room One, Town Center, Chingola</span></span>
+            <a class="fc" href="mailto:infocya260@gmail.com"><svg class="fi" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span>infocya260@gmail.com</span></a>
+            <a class="fc" href="tel:+260965175304"><svg class="fi" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg><span>+260965175304</span></a>
+          </div>
+        </div>
+        <form class="nl" data-subscribe novalidate>
+          <h4>Stay in the loop</h4>
+          <p>Get occasional news about CYA events and programmes.</p>
+          <div class="nlr">
+            <label class="sr" for="nl-name">Name (optional)</label><input id="nl-name" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
+            <label class="sr" for="nl-email">Email</label><input id="nl-email" name="email" type="email" required maxlength="200" placeholder="you@example.com" autocomplete="email">
+            <button class="btn bc" type="submit">Subscribe</button>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="nl-w">Leave this empty</label><input id="nl-w" name="website" tabindex="-1" autocomplete="off"></div>
+          <p class="fmsg" role="status"></p>
+        </form>
+        <div class="cr">
+          <span>© Chingola Youth Association</span>
+          <span>Website by <strong>Teen Tech Technology</strong> &middot; <a class="foot-admin" href="https://teentech-technology.github.io/cya-dashboard/" rel="nofollow">Admin</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts: mobile menu, forms and photo viewer -->
+    <script src="site.js"></script>
+    <script src="db.js"></script>
+    <script src="extras.js"></script>
+    <script src="feedback.js"></script>
+  </body>
+</html>

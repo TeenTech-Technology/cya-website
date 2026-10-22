@@ -892,3 +892,76 @@ img.zoom:hover {
 .foot-admin:hover { opacity: 1; }
 @media (max-width: 900px) { .ups { grid-template-columns: 1fr; } }
 .cr .foot-admin { display: inline; color: inherit; }
+
+/* ---------- 17. Database forms, reservations, tickets ---------- */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+label em { font-weight: 400; font-style: normal; color: #667; font-size: 13px; }
+label.cb { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+label.cb input { width: 18px; height: 18px; flex: none; margin-top: 3px; accent-color: var(--b); }
+textarea { resize: vertical; }
+.u .seats { font-size: 14px; opacity: .85; margin-top: 6px; }
+.u .btn + .btn { margin-left: 8px; }
+.u .btn svg { width: 18px; height: 18px; }
+.btn.rs { display: inline-flex; align-items: center; gap: 8px; }
+dialog.rsv { border: 0; border-radius: 20px; padding: 0; width: min(480px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; margin: auto; box-shadow: 0 20px 60px #0005; color: var(--t, #1b2333); }
+dialog.rsv::backdrop { background: #072a63a6; }
+.rsv .in { padding: 26px; position: relative; }
+.rsv h3 { color: var(--bd); font-size: 22px; margin-bottom: 4px; padding-right: 36px; overflow-wrap: anywhere; }
+.rsv .x { position: absolute; top: 14px; right: 14px; background: #eef3fb; border: 0; border-radius: 50%; width: 36px; height: 36px; display: grid; place-items: center; cursor: pointer; color: var(--bd); }
+.rsv .sub { color: #5b6577; font-size: 14px; }
+.ticket { border: 2px dashed #c8742c; border-radius: 16px; padding: 20px; margin-top: 16px; text-align: center; background: #fffaf4; }
+.ticket .code { font-family: ui-monospace, Consolas, monospace; font-size: 26px; font-weight: 800; letter-spacing: 2px; color: var(--bd); margin: 8px 0; }
+.ticket .qrc { width: 180px; height: 180px; margin: 10px auto; background: #fff; padding: 8px; border-radius: 8px; }
+.ticket .qrc svg, .ticket .qrc img { width: 100%; height: 100%; display: block; }
+.ticket dl { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 4px 12px; text-align: left; font-size: 15px; margin-top: 10px; }
+.ticket dt { color: #5b6577; } .ticket dd { font-weight: 600; overflow-wrap: anywhere; }
+.rsv .acts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.rsv .acts .btn { flex: 1 1 160px; justify-content: center; }
+.btn.bo3 { border: 2px solid var(--b); color: var(--b); background: #fff; }
+@media (max-width: 480px) { .u .btn + .btn { margin-left: 0; margin-top: 10px; } .u .btn { width: 100%; justify-content: center; } }
+@media print {
+  body.printing > *:not(dialog) { display: none !important; }
+  dialog.rsv { position: static; box-shadow: none; max-height: none; width: 100%; }
+  dialog.rsv .x, dialog.rsv .acts, dialog.rsv .note { display: none; }
+}
+
+/* ---------- 18. Newsletter, gallery, feedback ---------- */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: 0; }
+footer .nl { border-top: 1px solid #ffffff22; margin-top: 30px; padding-top: 24px; }
+footer .nl h4 { margin-bottom: 4px; }
+footer .nl p { font-size: 14px; color: #c9d4ea; }
+.nlr { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr) auto; gap: 10px; margin-top: 12px; max-width: 720px; }
+.nlr input { margin: 0; min-width: 0; }
+.nlr .btn { padding: 11px 22px; cursor: pointer; }
+footer .fmsg.ok { color: #9be3b4; } footer .fmsg.err { color: #ffb4ab; }
+@media (max-width: 640px) { .nlr { grid-template-columns: 1fr; } }
+.gfilter { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+.gfilter label { margin: 0; } .gfilter select { width: auto; max-width: 100%; }
+.ggrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+.ggrid figure { margin: 0; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px #0b3c8c14; }
+.ggrid button { border: 0; padding: 0; background: none; display: block; width: 100%; cursor: zoom-in; }
+.ggrid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.ggrid figcaption { padding: 10px 14px; font-size: 14px; overflow-wrap: anywhere; }
+.ggrid figcaption span { display: block; color: var(--c); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+dialog.glb { border: 0; background: transparent; max-width: 100vw; max-height: 100dvh; width: 100vw; height: 100dvh; padding: 0; margin: 0; }
+dialog.glb::backdrop { background: #000d; }
+.glb figure { margin: 0; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 56px 12px; }
+.glb img { max-width: 100%; max-height: calc(100dvh - 140px); object-fit: contain; border-radius: 8px; }
+.glb figcaption { color: #fff; margin-top: 10px; text-align: center; }
+.glb button { position: fixed; background: #ffffff26; color: #fff; border: 0; border-radius: 50%; width: 46px; height: 46px; font-size: 30px; line-height: 1; cursor: pointer; z-index: 2; }
+.glb .x { top: 12px; right: 12px; } .glb .pv { left: 10px; top: 50%; } .glb .nx { right: 10px; top: 50%; }
+.stars { border: 0; padding: 0; margin: 14px 0 0; display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 6px; }
+.stars legend { font-weight: 600; font-size: 14px; margin-bottom: 6px; width: 100%; }
+.stars input { position: absolute; opacity: 0; width: 1px; }
+.stars label { margin: 0; width: 48px; height: 48px; display: grid; place-items: center; border: 1.5px solid #d3dbe8; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 18px; color: var(--bd); background: #fff; }
+.stars input:checked ~ label, .stars label:hover, .stars label:hover ~ label { background: var(--c); border-color: var(--c); color: #fff; }
+.stars input:focus-visible + label { outline: 3px solid #c8742c80; outline-offset: 2px; }
+.pe .gl { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.pe .gl img { width: 84px; height: 84px; object-fit: cover; border-radius: 10px; }
+.pe .gl a.more { align-self: center; font-weight: 700; }
+
+/* ---------- 19. Footer contact icons ---------- */
+footer .fc { display: flex; align-items: flex-start; gap: 10px; color: #c9d4ea; font-size: 14px; margin-bottom: 8px; overflow-wrap: anywhere; min-width: 0; }
+footer a.fc:hover { color: #fff; }
+footer .fi { width: 18px; height: 18px; flex: none; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 400px) { .stars label { width: 40px; height: 40px; } .form, .cf { padding: 22px 16px; } }
