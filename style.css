@@ -125,6 +125,10 @@ nav ul a.on {
 }
 
 
+.menu svg {
+  display: block;
+}
+
 /* ---------- 3. Buttons ---------- */
 
 .btn {
@@ -764,6 +768,10 @@ img.zoom:hover {
 }
 
 
+.u .btn {
+  margin-top: 14px;
+}
+
 /* ---------- 15. Responsive / mobile (screens 900px wide or less) ---------- */
 
 /* Keep this block LAST so it can override the rules above */
@@ -847,7 +855,7 @@ img.zoom:hover {
 
   .stats,
   .parts {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .gal {
@@ -866,5 +874,10 @@ img.zoom:hover {
 
   .st strong {
     font-size: 30px;
+  }
+
+  .st {
+    padding: 20px 16px;
+    overflow-wrap: anywhere;
   }
 }

@@ -21,9 +21,10 @@ see it, or edit it with any text editor (VS Code is a good choice).
 | `programmes.html` | **Programmes** page: the 5 focus areas |
 | `impact.html` | **Impact** page: numbers, projects and a photo gallery |
 | `partners.html` | **Partners** page: KCM, NYDC, Local Government, LIYA |
-| `events.html` | **Events** page: Youth Indaba, upcoming events, future plans |
+| `events.html` | **Events** page: Upcoming Events, Past Events and future plans |
 | `contact.html` | **Contact** page: office, email, phone, socials and a contact form |
 | `register.html` | **Register** page: Youth Indaba registration form |
+| `404.html` | Friendly "page not found" page shown by GitHub Pages for broken links |
 | `style.css` | The look of **every** page: colours, fonts, sizes, layout, mobile view |
 | `site.js` | The "moving parts" of every page: mobile menu, sending forms, photo viewer |
 | `img/` | All the photos, the logo and the little browser icons |
