@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Events | Chingola Youth Association</title>
-    <meta name="description" content="Chingola Youth Association (CYA) is a youth-led non-profit registered under NYDC, empowering the youth of Chingola, Zambia.">
+    <meta name="description" content="Upcoming and past events from Chingola Youth Association, including the Chingola Youth Indaba.">
     <meta name="theme-color" content="#0b3c8c">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Events | Chingola Youth Association">
-    <meta property="og:description" content="Empowering Youth. Driving Development. Inspiring Change.">
+    <meta property="og:description" content="Upcoming and past events from Chingola Youth Association, including the Chingola Youth Indaba.">
     <meta property="og:url" content="https://teentech-technology.github.io/cya-website/events.html">
     <meta property="og:image" content="https://teentech-technology.github.io/cya-website/img/og.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -53,7 +53,7 @@
         <span class="k">Upcoming Events</span>
         <h2>What's coming up</h2>
         <p class="lead" style="color:#ffffffd9">Dates will be shared here as soon as they are confirmed. You are warmly welcome to register your interest in the meantime.</p>
-        <div class="ups">
+        <div class="ups" id="ev-up">
           <div class="u">
             <span class="d">Dates to be confirmed</span>
             <h3>Chingola Youth Indaba (next edition)</h3>
@@ -74,15 +74,17 @@
       </div>
     </section>
 
-    <!-- Past events -->
-    <section>
-      <div class="w two">
+    <!-- Past events (loaded from the database by events.js) -->
+    <section class="past">
+      <div class="w"><span class="k">Past Events</span><h2>Where we have been</h2></div>
+      <div id="ev-past">
+      <div class="w two pe">
         <div>
-          <span class="k">Past Events</span>
           <h2>Chingola Youth Indaba 2025</h2>
           <p class="lead">The 2025 edition attracted over 200 youths from all walks of life, and the Indaba was declared an annual event.</p>
         </div>
-        <img src="img/indaba-poster.webp" alt="Chingola Youth Indaba 2025 poster" style="max-height:420px;object-fit:cover;width:100%">
+        <img src="img/indaba-poster.webp" alt="Chingola Youth Indaba 2025 poster" loading="lazy">
+      </div>
       </div>
     </section>
 
@@ -125,12 +127,13 @@
         </div>
         <div class="cr">
           <span>© Chingola Youth Association</span>
-          <span>Website by <strong>Teen Tech Technology</strong></span>
+          <span>Website by <strong>Teen Tech Technology</strong> &middot; <a class="foot-admin" href="https://teentech-technology.github.io/cya-dashboard/" rel="nofollow">Admin</a></span>
         </div>
       </div>
     </footer>
 
     <!-- Scripts: mobile menu, forms and photo viewer -->
     <script src="site.js"></script>
+    <script src="events.js"></script>
   </body>
 </html>

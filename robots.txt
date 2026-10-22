@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://teentech-technology.github.io/cya-website/sitemap.xml

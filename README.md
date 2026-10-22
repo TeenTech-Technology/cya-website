@@ -157,3 +157,10 @@ The site is hosted for free by **GitHub Pages** from this repository
 
 You can watch the progress in the repository's **Actions** tab on GitHub
 ("pages build and deployment").
+
+## Launch TODOs (information CYA still needs to supply)
+- Event dates and venues (add them in the dashboard: https://teentech-technology.github.io/cya-dashboard/)
+- Photos from past events
+- Social media links (Facebook, LinkedIn, Instagram, TikTok are shown as names only until links are provided)
+- Confirm the "300+ pads" figure on the Home and Impact pages
+- Activate FormSubmit: click the confirmation email FormSubmit sends to infocya260@gmail.com after the first form submission
