@@ -990,8 +990,8 @@ nav ul a.on .ic { color: var(--c); opacity: 1; }
 .menu .ic { width: 22px; height: 22px; }
 .k { display: inline-flex; align-items: center; gap: 8px; }
 .k .kic { width: 16px; height: 16px; }
-.fi { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #fdf1e6; color: var(--c); margin-bottom: 10px; }
-.fi .ic { width: 22px; height: 22px; }
+.fic { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #fdf1e6; color: var(--c); margin-bottom: 10px; }
+.fic .ic { width: 22px; height: 22px; }
 @media (min-width: 901px) and (max-width: 1239px) { nav ul a .ic { display: none; } nav ul { gap: 18px; } }
 @media (max-width: 900px) {
   .menu { display: grid; }
