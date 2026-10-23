@@ -979,3 +979,24 @@ a.cc .cic { background: var(--c); color: #fff; }
 .sic { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .cc small { color: #667; font-size: 13px; }
 @media (max-width: 900px) { .ct { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ---------- v6: shared line icons (same set and weight as the dashboard) ---------- */
+.ic { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; vertical-align: middle; }
+nav ul a { display: inline-flex; align-items: center; gap: 6px; }
+nav ul a .ic { width: 16px; height: 16px; color: var(--b); opacity: .85; }
+nav ul a.on .ic { color: var(--c); opacity: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.menu { width: 44px; height: 44px; display: none; place-items: center; border-radius: 12px; background: var(--l); }
+.menu .ic { width: 22px; height: 22px; }
+.k { display: inline-flex; align-items: center; gap: 8px; }
+.k .kic { width: 16px; height: 16px; }
+.fi { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #fdf1e6; color: var(--c); margin-bottom: 10px; }
+.fi .ic { width: 22px; height: 22px; }
+@media (min-width: 901px) and (max-width: 1239px) { nav ul a .ic { display: none; } nav ul { gap: 18px; } }
+@media (max-width: 900px) {
+  .menu { display: grid; }
+  nav ul.open { gap: 2px; padding: 10px 16px; }
+  nav ul.open a { display: flex; gap: 12px; min-height: 44px; padding: 0 10px; border-radius: 12px; }
+  nav ul.open a .ic { width: 20px; height: 20px; }
+  nav ul.open a.on { background: var(--l); }
+}
