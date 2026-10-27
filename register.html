@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Register | Chingola Youth Association</title>
-    <meta name="description" content="Register your interest with Chingola Youth Association and get involved in youth events and programmes in Chingola.">
+    <title>Register and reserve a seat | Chingola Youth Association</title>
+    <meta name="description" content="Reserve a seat at the next Chingola Youth Association event and get your ticket with a QR code straight away.">
     <meta name="theme-color" content="#0b3c8c">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Register | Chingola Youth Association">
-    <meta property="og:description" content="Register your interest with Chingola Youth Association and get involved in youth events and programmes in Chingola.">
+    <meta property="og:title" content="Register and reserve a seat | Chingola Youth Association">
+    <meta property="og:description" content="Reserve a seat at the next Chingola Youth Association event and get your ticket with a QR code straight away.">
     <meta property="og:url" content="https://teentech-technology.github.io/cya-website/register.html">
     <meta property="og:image" content="https://teentech-technology.github.io/cya-website/img/og.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -44,83 +44,51 @@
     <!-- Page header (banner with background photo) -->
     <header class="ph" style="--img:url(img/indaba-hero.webp)">
       <div class="w">
-        <span class="tag">Event Registration</span>
-        <h1>Chingola Youth <span style="color:#f3a65f">Indaba</span></h1>
-        <p>The annual gathering of Chingola youths from all walks of life. Over 200 youths attended in 2025.</p>
+        <span class="tag">Register</span>
+        <h1>Reserve your <span style="color:#f3a65f">seat</span></h1>
+        <p>Reserving a seat is how you register. Choose an event below and your ticket appears straight away.</p>
       </div>
     </header>
 
-    <!-- Event details and registration form -->
+    <!-- Upcoming events to register for (loaded from the database by events.js; same events as the dashboard) -->
+    <section class="up">
+      <div class="w">
+        <span class="k"><svg class="ic kic" aria-hidden="true" focusable="false"><use href="#i-ticket"/></svg>Register</span>
+        <h2>Our next events</h2>
+        <p class="lead" style="color:#ffffffd9">Pick the one you would like to join and reserve a seat for yourself and your friends.</p>
+        <div class="ups reg" id="ev-up" data-register data-limit="4">
+          <div class="u"><h3>Loading our next events&hellip;</h3><p>One moment please.</p></div>
+        </div>
+        <!-- Shown by events.js only when there is no upcoming event -->
+        <div class="u soon" id="ev-soon" hidden>
+          <h3>Our next event is coming soon</h3>
+          <p>We are busy planning our next gathering for young people in Chingola. Leave your email and we will let you know as soon as seats open.</p>
+          <form class="nl" data-subscribe novalidate>
+            <div class="nlr">
+              <label class="sr" for="sn-name">Name (optional)</label><input id="sn-name" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
+              <label class="sr" for="sn-email">Email</label><input id="sn-email" name="email" type="email" required maxlength="200" placeholder="you@example.com" autocomplete="email">
+              <button class="btn bc" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><span>Keep me posted</span></button>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="sn-w">Leave this empty</label><input id="sn-w" name="website" tabindex="-1" autocomplete="off"></div>
+            <p class="fmsg" role="status"></p>
+          </form>
+          <p style="margin-top:14px"><a class="tl" href="events.html" style="color:#fff;text-decoration:underline"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cal"/></svg><span>See past events and photos</span></a></p>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="w two" style="align-items:start">
         <div>
-          <span class="k"><svg class="ic kic" aria-hidden="true" focusable="false"><use href="#i-ticket"/></svg>Register</span>
-          <h2>Reserve your place</h2>
-          <p class="lead">Fill in the form to register for the next Chingola Youth Indaba.</p>
-          <div class="card" style="margin-top:26px">
-            <h3>Event details</h3>
-            <p><b>Date:</b> To be confirmed<br>
-              <b>Venue:</b> To be confirmed, Chingola<br>
-              <b>Who:</b> In-school &amp; out-of-school youths, young entrepreneurs, student leaders, community youth groups</p>
-          </div>
-          <img src="img/indaba-poster.webp" alt="Indaba 2025 poster" style="margin-top:26px;max-height:380px;object-fit:cover;width:100%;border-radius:20px">
+          <span class="k"><svg class="ic kic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>Good to know</span>
+          <h2>How it works</h2>
+          <p class="lead">Give your name and phone number, choose how many seats you need, and your ticket with a QR code appears on screen. You can download it or print it.</p>
         </div>
-        <!-- Form (sent by site.js) -->
-        <form class="form" data-mail="Youth Indaba registration">
-          <div class="hp" aria-hidden="true"><label for="hp-<form class="form" data-mail="Youth Indaba registration">x">Leave this empty</label><input name="_honey" tabindex="-1" autocomplete="off"></div>
-          <h3 style="color:var(--bd);font-size:22px">Indaba Registration Form</h3>
-          <div class="row">
-            <div>
-              <label for="fn">First name</label>
-              <input id="fn" name="First name" required>
-            </div>
-            <div>
-              <label for="ln">Last name</label>
-              <input id="ln" name="Last name" required>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="ph">Phone</label>
-              <input id="ph" name="Phone" type="tel" required placeholder="+260 ...">
-            </div>
-            <div>
-              <label for="em">Email</label>
-              <input id="em" name="Email" type="email" placeholder="you@example.com">
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="ag">Age</label>
-              <input id="ag" name="Age" type="number" min="10" max="40">
-            </div>
-            <div>
-              <label for="wd">Ward / Area</label>
-              <input id="wd" name="Ward" placeholder="Your ward or area">
-            </div>
-          </div>
-          <label for="ty">I am a…</label>
-          <select id="ty" name="Category">
-            <option>In-school youth</option>
-            <option>Out-of-school youth</option>
-            <option>Young entrepreneur / innovator</option>
-            <option>School council / student leader</option>
-            <option>Community youth group member</option>
-          </select>
-          <label for="fa">Interest area</label>
-          <select id="fa" name="Interest area">
-            <option>Youth Leadership &amp; Governance</option>
-            <option>Entrepreneurship &amp; Skills Development</option>
-            <option>Health &amp; Wellbeing</option>
-            <option>Climate Action &amp; Environment</option>
-            <option>Education &amp; Mentorship</option>
-          </select>
-          <label style="font-weight:400"><input type="checkbox" name="Consent" value="Yes" required style="width:auto"> I agree to be contacted by CYA about this event</label>
-          <br>
-          <button class="btn bc" type="submit" style="width:100%"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-ticket"/></svg><span>Register for the Indaba</span></button>
-          <p class="note">Your details go straight to <b>infocya260@gmail.com</b>, and the CYA team will get back to you.</p>
-          <p class="note" style="background:var(--l);border-color:var(--b)">Want a ticket with a QR code for check-in? Use <b>Reserve a seat</b> on the <a href="events.html">Events page</a>.</p>
-        </form>
+        <div class="card">
+          <h3>On the day</h3>
+          <p>Please keep your ticket code, or take a screenshot, and show it at the entrance. CYA does not send tickets by email or WhatsApp.</p>
+          <p style="margin-top:10px">Questions? Call <a href="tel:+260965175304">+260965175304</a> or <a href="contact.html">send us a message</a>.</p>
+        </div>
       </div>
     </section>
 
@@ -173,5 +141,7 @@
     <script src="site.js"></script>
     <script src="db.js"></script>
     <script src="extras.js"></script>
+    <script src="vendor/qrcode.js"></script>
+    <script src="events.js"></script>
   </body>
 </html>
