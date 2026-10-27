@@ -25,7 +25,7 @@
   sel.addEventListener('change', render);
 
   var box = document.createElement('dialog'); box.className = 'glb';
-  box.innerHTML = '<button class="x" type="button" aria-label="Close">&times;</button><button class="pv" type="button" aria-label="Previous photo">&lsaquo;</button><figure><img alt=""><figcaption></figcaption></figure><button class="nx" type="button" aria-label="Next photo">&rsaquo;</button>';
+  box.innerHTML = '<button class="x" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button><button class="pv" type="button" aria-label="Previous photo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button><figure><img alt=""><figcaption></figcaption></figure><button class="nx" type="button" aria-label="Next photo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>';
   document.body.appendChild(box);
   function open(i) { idx = (i + shown.length) % shown.length; var p = shown[idx]; box.querySelector('img').src = p.image_url; box.querySelector('img').alt = p.caption || 'CYA photo'; box.querySelector('figcaption').textContent = p.caption || ''; if (!box.open) box.showModal(); }
   grid.addEventListener('click', function (e) { var b = e.target.closest('[data-i]'); if (b) open(+b.dataset.i); });

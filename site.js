@@ -114,7 +114,7 @@ document.querySelectorAll('form[data-mail]').forEach(function (form) {
   // and one big image. It stays hidden until a photo is clicked.
   var viewer = document.createElement('div');
   viewer.className = 'lb';
-  viewer.innerHTML = '<button class="lbx" aria-label="Close">×</button><button class="lbp" aria-label="Previous">‹</button><img alt=""><button class="lbn" aria-label="Next">›</button>';
+  viewer.innerHTML = '<button class="lbx" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button><button class="lbp" aria-label="Previous"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button><img alt=""><button class="lbn" aria-label="Next"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>';
   document.body.appendChild(viewer);
 
   var bigImage = viewer.querySelector('img');

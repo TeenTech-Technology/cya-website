@@ -17,7 +17,16 @@
   var today = new Date().toISOString().slice(0, 10);
   function isPast(e) { return e.event_date ? e.event_date < today : e.status === 'past'; }
   function left(e) { var s = seats[e.id]; return e.capacity ? Math.max(e.capacity - (s || 0), 0) : null; }
-  var TICKET = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v3a3 3 0 0 0 0 6v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3a3 3 0 0 0 0-6Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg>';
+  var TICKET = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v3a3 3 0 0 0 0 6v3a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3a3 3 0 0 0 0-6Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg>';
+
+  function ic(d) { return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + d + '</svg>'; }
+  var ICO = {
+    edit: ic('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>'),
+    down: ic('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>'),
+    print: ic('<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>'),
+    img: ic('<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>'),
+    star: ic('<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2l-5-4.9 6.9-1Z"/>')
+  };
 
   function upCard(e) {
     var reg = safeUrl(e.register_url), img = safeUrl(e.poster_url), w = when(e), l = left(e);
@@ -28,8 +37,8 @@
       (e.venue ? '<p class="v">' + esc(e.venue) + '</p>' : '') +
       (e.description ? '<p>' + esc(e.description) + '</p>' : '') +
       (l !== null ? '<p class="seats">' + (l ? l + ' of ' + e.capacity + ' seats left' : 'Fully booked') + '</p>' : '') +
-      (l === 0 ? '' : '<button class="btn bc rs" type="button" data-reserve="' + esc(e.id) + '">' + TICKET + 'Reserve a seat</button>') +
-      (reg ? '<a class="btn bo" href="' + esc(reg) + '">Register your interest</a>' : '') + '</div>';
+      (l === 0 ? '' : '<button class="btn bc rs" type="button" data-reserve="' + esc(e.id) + '">' + TICKET + '<span>Reserve a seat</span></button>') +
+      (reg ? '<a class="btn bo rs" href="' + esc(reg) + '">' + ICO.edit + '<span>Register your interest</span></a>' : '') + '</div>';
   }
   function pastCard(e) {
     var img = safeUrl(e.poster_url), w = when(e);
@@ -40,8 +49,8 @@
       (e.description ? '<p class="lead">' + esc(e.description) + '</p>' : '') +
       ((gal[e.id] || []).length ? '<div class="gl">' + gal[e.id].slice(0, 4).map(function (g) {
         return '<a href="gallery.html?event=' + esc(e.id) + '"><img src="' + esc(g.image_url) + '" alt="' + esc(g.caption || e.title + ' photo') + '" loading="lazy"></a>'; }).join('') +
-        '<a class="more" href="gallery.html?event=' + esc(e.id) + '">See all photos</a></div>' : '') +
-      '<p style="margin-top:14px"><a href="feedback.html?event=' + esc(e.id) + '">Were you there? Share your feedback</a></p></div>' +
+        '<a class="more tl" href="gallery.html?event=' + esc(e.id) + '">' + ICO.img + '<span>See all photos</span></a></div>' : '') +
+      '<p style="margin-top:14px"><a class="tl" href="feedback.html?event=' + esc(e.id) + '">' + ICO.star + '<span>Were you there? Share your feedback</span></a></p></div>' +
       (img ? '<img src="' + esc(img) + '" alt="' + esc(e.title) + ' poster" loading="lazy">' : '<div></div>') + '</div>';
   }
 
@@ -56,7 +65,7 @@
       return a.sort_order - b.sort_order; });
     if (limit) u = u.slice(0, limit);
     if (up) up.innerHTML = u.length ? u.map(upCard).join('') :
-      '<div class="u"><h3>New events coming soon</h3><p>We are planning our next gatherings. Please check back soon, or register your interest and we will keep you posted.</p><a class="btn bc" href="register.html">Register your interest</a></div>';
+      '<div class="u"><h3>New events coming soon</h3><p>We are planning our next gatherings. Please check back soon, or register your interest and we will keep you posted.</p><a class="btn bc rs" href="register.html">' + ICO.edit + '<span>Register your interest</span></a></div>';
     if (past) past.innerHTML = p.length ? p.map(pastCard).join('') :
       '<div class="w"><p class="lead">Photos and stories from our past events will appear here soon.</p></div>';
   }
@@ -104,7 +113,7 @@
       '<label for="rs">Number of seats</label><select id="rs" name="seats">' + opts + '</select>' +
       (l !== null ? '<p class="sub" style="margin-top:6px">' + l + ' seats left</p>' : '') +
       '<div class="hp" aria-hidden="true"><label for="rw">Leave this empty</label><input id="rw" name="website" tabindex="-1" autocomplete="off"></div>' +
-      '<button class="btn bc" type="submit" style="width:100%;margin-top:16px">Reserve my seat</button><p class="fmsg"></p></form>' +
+      '<button class="btn bc rs" type="submit" style="width:100%;margin-top:16px">' + TICKET + '<span>Reserve my seat</span></button><p class="fmsg"></p></form>' +
       '<p class="note">Your ticket appears on screen straight away. Please save it or take a screenshot, and show it at the entrance.</p></div>';
     opened = Date.now(); dlg.showModal();
     dlg.querySelector('form').addEventListener('submit', submit);
@@ -115,7 +124,7 @@
     if (!f.reportValidity()) return;
     if (f.website.value) { dlg.close(); return; }
     if (Date.now() - opened < 2500) { msg.className = 'fmsg err'; msg.textContent = 'Please take a moment to check your details, then try again.'; return; }
-    btn.disabled = true; btn.textContent = 'Reserving...';
+    btn.disabled = true; btn.querySelector('span').textContent = 'Reserving...';
     var body = { p_event_id: current.id, p_name: f.name.value.trim(), p_phone: f.phone.value.trim(), p_email: f.email.value.trim() || null, p_seats: +f.seats.value };
     fetch(DB.URL + '/rest/v1/rpc/reserve_seat', { method: 'POST', headers: DB.headers(), body: JSON.stringify(body) })
       .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
@@ -126,7 +135,7 @@
       .catch(function (err) {
         msg.className = 'fmsg err';
         msg.textContent = (err && err.code === 'P0001' && err.message) ? err.message : 'Sorry, we could not reserve your seat just now. Please try again, or call +260965175304.';
-        btn.disabled = false; btn.textContent = 'Reserve my seat';
+        btn.disabled = false; btn.querySelector('span').textContent = 'Reserve my seat';
       });
   }
   function qrSvg(text) { var q = qrcode(0, 'M'); q.addData(text); q.make(); return q; }
@@ -138,7 +147,7 @@
       '<div class="code">' + esc(t.code) + '</div>' +
       '<dl><dt>Event</dt><dd>' + esc(t.title) + '</dd><dt>Date</dt><dd>' + esc(t.date) + '</dd><dt>Venue</dt><dd>' + esc(t.venue) + '</dd>' +
       '<dt>Name</dt><dd>' + esc(t.name) + '</dd><dt>Seats</dt><dd>' + t.seats + '</dd></dl></div>' +
-      '<div class="acts"><button class="btn bc" type="button" data-png>Download ticket</button><button class="btn bo3" type="button" data-print>Print or save as PDF</button></div>' +
+      '<div class="acts"><button class="btn bc" type="button" data-png>' + ICO.down + '<span>Download ticket</span></button><button class="btn bo3" type="button" data-print>' + ICO.print + '<span>Print or save as PDF</span></button></div>' +
       '<p class="note">Please keep this code. CYA does not send tickets by email or WhatsApp.</p></div>';
   }
   function downloadPng() {

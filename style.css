@@ -1002,3 +1002,14 @@ nav ul a.on .ic { color: var(--c); opacity: 1; }
 }
 .cc .soc > a { display: inline-flex; align-items: center; gap: 6px; margin: 0; background: var(--l); color: var(--b); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; }
 .cc .soc > a:hover, .cc .soc > a:focus-visible { background: var(--c); color: #fff; }
+
+/* ---------- Icons inside dynamically built buttons and links ---------- */
+.btn.rs span { min-width: 0; }
+.tl { display: inline-flex; align-items: center; gap: 8px; }
+.tl .ic { width: 16px; height: 16px; }
+.lb button, .glb button { display: grid; place-items: center; padding: 0; }
+.lb button .ic, .glb button .ic { width: 24px; height: 24px; stroke-width: 2.4; }
+.lb button:focus-visible, .glb button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.glb button { background: #0009; }
+.glb .pv, .glb .nx { transform: translateY(-50%); }
+.rsv .acts .btn { flex: 1 1 190px; }
