@@ -1000,3 +1000,5 @@ nav ul a.on .ic { color: var(--c); opacity: 1; }
   nav ul.open a .ic { width: 20px; height: 20px; }
   nav ul.open a.on { background: var(--l); }
 }
+.cc .soc > a { display: inline-flex; align-items: center; gap: 6px; margin: 0; background: var(--l); color: var(--b); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; }
+.cc .soc > a:hover, .cc .soc > a:focus-visible { background: var(--c); color: #fff; }
