@@ -159,6 +159,7 @@
       '<label for="rs">Number of seats</label><select id="rs" name="seats">' + opts + '</select>' +
       (l !== null ? '<p class="sub" style="margin-top:6px">' + l + ' seats left</p>' : '') +
       '<div class="hp" aria-hidden="true"><label for="rw">Leave this empty</label><input id="rw" name="website" tabindex="-1" autocomplete="off"></div>' +
+      '<label class="cb"><input id="rc" name="consent" type="checkbox" required><span>I agree that CYA may keep my name and contact details to hold this seat. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>' +
       '<button class="btn bc rs" type="submit" style="width:100%;margin-top:16px">' + TICKET + '<span>Reserve my seat</span></button><p class="fmsg"></p></form>' +
       '<p class="note">Reserving a seat registers you for this event. Your ticket appears on screen straight away. Please save it or take a screenshot, and show it at the entrance.</p></div>';
     opened = Date.now(); dlg.showModal();

@@ -264,6 +264,7 @@
           </select>
           <label for="m">Message</label>
           <textarea id="m" name="Message" rows="5" required maxlength="3000" placeholder="How can we help?"></textarea>
+          <label class="cb"><input type="checkbox" name="Privacy consent" value="Yes" required><span>I agree that CYA may use my name, email and message to reply to me. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>
           <button class="btn bb" type="submit" style="width:100%;margin-top:18px"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-send"/></svg><span>Send message</span></button>
           <p class="note">Your details go straight to <b>infocya260@gmail.com</b>, and the CYA team will get back to you.</p>
         </form>
@@ -305,12 +306,14 @@
             <label class="sr" for="nl-email">Email</label><input id="nl-email" name="email" type="email" required maxlength="200" placeholder="you@example.com" autocomplete="email">
             <button class="btn bc" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><span>Subscribe</span></button>
           </div>
+          <label class="cb"><input type="checkbox" name="consent" required><span>I agree that CYA may store my name and email to send occasional news. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>
           <div class="hp" aria-hidden="true"><label for="nl-w">Leave this empty</label><input id="nl-w" name="website" tabindex="-1" autocomplete="off"></div>
           <p class="fmsg" role="status"></p>
         </form>
         <div class="cr">
           <span>© Chingola Youth Association</span>
-          <span>Website by <strong>Teen Tech Technology</strong> &middot; <a class="foot-admin" href="https://teentech-technology.github.io/cya-dashboard/" rel="nofollow">Admin</a></span>
+          <span class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms and Conditions</a></span>
+          <span>Website by <strong>Teen Tech Technology</strong></span>
         </div>
       </div>
     </footer>
