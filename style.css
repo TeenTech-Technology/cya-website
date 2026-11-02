@@ -888,10 +888,7 @@ img.zoom:hover {
 .u .v { font-weight: 700; margin-bottom: 4px; }
 .past .pe + .pe { margin-top: 48px; }
 .past .pe img { max-height: 420px; object-fit: cover; width: 100%; border-radius: 14px; }
-.foot-admin { opacity: .55; font-size: 12px; }
-.foot-admin:hover { opacity: 1; }
 @media (max-width: 900px) { .ups { grid-template-columns: 1fr; } }
-.cr .foot-admin { display: inline; color: inherit; }
 
 /* ---------- 17. Database forms, reservations, tickets ---------- */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
@@ -1044,3 +1041,53 @@ nav ul a.on .ic { color: var(--c); opacity: 1; }
 .ups.reg[hidden], .u.soon[hidden] { display: none; }
 .u button.btn.bo { background: transparent; }
 .u button.btn.bo:hover { background: #ffffff1f; }
+
+/* ---------- 21. Privacy, terms, and form consent ---------- */
+.cr { align-items: center; }
+.cr .legal { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+.cr .legal a {
+  display: inline;
+  color: #c9d4ea;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cr .legal a:hover { color: #fff; }
+label.cb { line-height: 1.45; }
+label.cb > span { flex: 1; min-width: 0; font-weight: 400; }
+label.cb a { display: inline; color: var(--b); font-weight: 700; text-decoration: underline; }
+footer label.cb { max-width: 720px; margin-top: 12px; color: #c9d4ea; font-size: 14px; }
+footer label.cb a, .up label.cb a { color: #fff; display: inline; font-size: inherit; text-decoration: underline; }
+.up label.cb { margin-top: 12px; color: #fff; }
+.rsv label.cb { margin-top: 14px; }
+.docwrap { padding-top: 56px; padding-bottom: 72px; }
+.doc { max-width: 760px; overflow-wrap: break-word; }
+.doc .updated {
+  display: inline-block;
+  background: #fff3e8;
+  color: #8a4b12;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .03em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.doc .intro { font-size: 18px; color: #4a5568; }
+.doc h2 { font-size: 28px; margin: 32px 0 10px; }
+.doc h3 { color: var(--b); font-size: 18px; margin: 18px 0 6px; }
+.doc p { margin: 0 0 12px; }
+.doc ul { margin: 0 0 14px 1.25em; }
+.doc li { margin-bottom: 6px; }
+.doc a { color: var(--b); font-weight: 700; }
+.docnav { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0 18px; }
+.docnav a { font-size: 14px; }
+.todo { background: #fff3cd; color: #5c4300; padding: 0 4px; border-radius: 4px; font-weight: 700; }
+.cr .legal a:focus-visible, label.cb a:focus-visible, .doc a:focus-visible {
+  outline: 3px solid #c8742c;
+  outline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .doc h2 { font-size: 24px; }
+  .docwrap { padding-top: 40px; }
+}

@@ -78,7 +78,7 @@
           <label for="vm">Message <em>(optional)</em></label>
           <textarea id="vm" data-col="message" rows="3" maxlength="2000"></textarea>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
-          <label class="cb"><input type="checkbox" data-col="consent" required> I agree that CYA may keep these details and contact me about volunteering.</label>
+          <label class="cb"><input type="checkbox" data-col="consent" required><span>I agree that CYA may keep these details and contact me about volunteering. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>
           <button class="btn bc" type="submit" style="width:100%;margin-top:14px"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-send"/></svg><span>Send volunteer form</span></button>
           <p class="note">Your details are stored securely and only seen by the CYA team.</p>
         </form>
@@ -120,12 +120,14 @@
             <label class="sr" for="nl-email">Email</label><input id="nl-email" name="email" type="email" required maxlength="200" placeholder="you@example.com" autocomplete="email">
             <button class="btn bc" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><span>Subscribe</span></button>
           </div>
+          <label class="cb"><input type="checkbox" name="consent" required><span>I agree that CYA may store my name and email to send occasional news. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>
           <div class="hp" aria-hidden="true"><label for="nl-w">Leave this empty</label><input id="nl-w" name="website" tabindex="-1" autocomplete="off"></div>
           <p class="fmsg" role="status"></p>
         </form>
         <div class="cr">
           <span>© Chingola Youth Association</span>
-          <span>Website by <strong>Teen Tech Technology</strong> &middot; <a class="foot-admin" href="https://teentech-technology.github.io/cya-dashboard/" rel="nofollow">Admin</a></span>
+          <span class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms and Conditions</a></span>
+          <span>Website by <strong>Teen Tech Technology</strong></span>
         </div>
       </div>
     </footer>
