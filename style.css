@@ -1060,6 +1060,11 @@ footer label.cb { max-width: 720px; margin-top: 12px; color: #c9d4ea; font-size:
 footer label.cb a, .up label.cb a { color: #fff; display: inline; font-size: inherit; text-decoration: underline; }
 .up label.cb { margin-top: 12px; color: #fff; }
 .rsv label.cb { margin-top: 14px; }
+fieldset.ageq { border: 1.5px solid #d3dbe8; border-radius: 10px; margin: 14px 0 0; padding: 2px 12px 10px; min-inline-size: 0; }
+fieldset.ageq legend { font-weight: 600; font-size: 14px; padding: 0 4px; }
+fieldset.ageq .choices { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+fieldset.ageq .choices label.cb { margin-top: 6px; }
+#vg-guard .note, #u18 .note { margin-top: 12px; }
 .docwrap { padding-top: 56px; padding-bottom: 72px; }
 .doc { max-width: 760px; overflow-wrap: break-word; }
 .doc .updated {

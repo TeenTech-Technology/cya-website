@@ -58,7 +58,7 @@
           <p class="lead">Volunteers help CYA run events, mentor young people and support our programmes. Tell us a little about yourself and the CYA team will get in touch.</p>
           <img src="img/mentorship-session.webp" alt="A CYA mentorship session" loading="lazy" style="margin-top:26px;max-height:380px;object-fit:cover;width:100%;border-radius:20px">
         </div>
-        <form class="form" data-table="volunteers" data-thanks="Thank you for offering to volunteer. The CYA team will contact you soon." novalidate>
+        <form class="form" id="vol-form" data-table="volunteers" data-thanks="Thank you for offering to volunteer. The CYA team will contact you soon." novalidate>
           <h3 style="color:var(--bd);font-size:22px">Volunteer form</h3>
           <label for="vn">Full name</label>
           <input id="vn" data-col="full_name" required maxlength="120" autocomplete="name">
@@ -70,6 +70,12 @@
             <div><label for="va">Area / location</label><input id="va" data-col="area" required maxlength="120" placeholder="Your ward or area"></div>
             <div><label for="vg">Age range <em>(optional)</em></label>
               <select id="vg" data-col="age_range"><option value="">Prefer not to say</option><option>Under 18</option><option>18-24</option><option>25-35</option><option>36 and over</option></select></div>
+          </div>
+          <div id="vg-guard" hidden aria-live="polite">
+            <label class="cb"><input id="vg-ok" data-col="parent_permission" type="checkbox" disabled><span>My parent or guardian has agreed to me attending and to CYA keeping my details</span></label>
+            <label for="vg-phone">Parent or guardian phone</label>
+            <input id="vg-phone" data-col="parent_phone" type="tel" disabled minlength="5" maxlength="40" placeholder="+260 ..." autocomplete="tel" aria-describedby="vg-note">
+            <p class="note" id="vg-note">If you are under 13, a parent or guardian must fill in this form for you. Do not sign up yourself.</p>
           </div>
           <label for="vs">Skills and interests</label>
           <textarea id="vs" data-col="skills" rows="3" required maxlength="1000" placeholder="For example: event planning, teaching, photography, sport"></textarea>

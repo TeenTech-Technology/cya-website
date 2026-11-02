@@ -158,12 +158,31 @@
       '<label for="re">Email <em>(optional)</em></label><input id="re" name="email" type="email" maxlength="200" autocomplete="email">' +
       '<label for="rs">Number of seats</label><select id="rs" name="seats">' + opts + '</select>' +
       (l !== null ? '<p class="sub" style="margin-top:6px">' + l + ' seats left</p>' : '') +
+      '<fieldset class="ageq"><legend>Are you under 18?</legend><div class="choices">' +
+      '<label class="cb"><input id="ru-no" type="radio" name="under18" value="no" required><span>No</span></label>' +
+      '<label class="cb"><input id="ru-yes" type="radio" name="under18" value="yes" required><span>Yes</span></label>' +
+      '</div></fieldset>' +
+      '<div id="u18" hidden aria-live="polite">' +
+      '<label class="cb"><input id="rperm" name="parent_permission" type="checkbox" disabled><span>My parent or guardian has agreed to me attending and to CYA keeping my details</span></label>' +
+      '<label for="rpp">Parent or guardian phone</label><input id="rpp" name="parent_phone" type="tel" disabled minlength="5" maxlength="40" placeholder="+260 ..." autocomplete="tel" aria-describedby="u18-note">' +
+      '<p class="note" id="u18-note">If you are under 13, a parent or guardian must book this seat for you. Do not book it yourself.</p></div>' +
       '<div class="hp" aria-hidden="true"><label for="rw">Leave this empty</label><input id="rw" name="website" tabindex="-1" autocomplete="off"></div>' +
       '<label class="cb"><input id="rc" name="consent" type="checkbox" required><span>I agree that CYA may keep my name and contact details to hold this seat. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy<span class="sr"> (opens in a new tab)</span></a>.</span></label>' +
       '<button class="btn bc rs" type="submit" style="width:100%;margin-top:16px">' + TICKET + '<span>Reserve my seat</span></button><p class="fmsg"></p></form>' +
       '<p class="note">Reserving a seat registers you for this event. Your ticket appears on screen straight away. Please save it or take a screenshot, and show it at the entrance.</p></div>';
     opened = Date.now(); dlg.showModal();
-    dlg.querySelector('form').addEventListener('submit', submit);
+    var form = dlg.querySelector('form'), yes = form.querySelector('#ru-yes'), extra = form.querySelector('#u18');
+    var perm = form.querySelector('#rperm'), pphone = form.querySelector('#rpp');
+    function syncAge() {
+      var on = yes.checked;
+      extra.hidden = !on;
+      perm.required = on; pphone.required = on;
+      perm.disabled = !on; pphone.disabled = !on;
+      if (!on) { perm.checked = false; pphone.value = ''; }
+    }
+    form.querySelector('#ru-no').addEventListener('change', syncAge);
+    yes.addEventListener('change', syncAge);
+    form.addEventListener('submit', submit);
   }
   function submit(ev) {
     ev.preventDefault(); var f = ev.target, msg = f.querySelector('.fmsg'), btn = f.querySelector('button[type=submit]');
@@ -172,11 +191,23 @@
     if (f.website.value) { dlg.close(); return; }
     if (Date.now() - opened < 2500) { msg.className = 'fmsg err'; msg.textContent = 'Please take a moment to check your details, then try again.'; return; }
     btn.disabled = true; btn.querySelector('span').textContent = 'Reserving...';
+    var under = f.under18.value === 'yes';
     var body = { p_event_id: current.id, p_name: f.name.value.trim(), p_phone: f.phone.value.trim(), p_email: f.email.value.trim() || null, p_seats: +f.seats.value };
-    fetch(DB.URL + '/rest/v1/rpc/reserve_seat', { method: 'POST', headers: DB.headers(), body: JSON.stringify(body) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
+    /* Extra arguments only when the person is under 18. The database function accepts them
+       after sql/003_parent_permission.sql has been run. Until then it answers PGRST202 and
+       we book with the original arguments so the seat is still reserved. */
+    var extra = under ? { p_under_18: true, p_parent_permission: true, p_parent_phone: f.parent_phone.value.trim() } : null;
+    function call(payload) {
+      return fetch(DB.URL + '/rest/v1/rpc/reserve_seat', { method: 'POST', headers: DB.headers(), body: JSON.stringify(payload) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); });
+    }
+    var sent = extra ? Object.assign({}, body, extra) : body;
+    call(sent).catch(function (err) {
+      if (extra && err && err.code === 'PGRST202') return call(body);
+      throw err;
+    })
       .then(function (res) {
-        ticket = { code: res.code, seats: res.seats, name: body.p_name, title: current.title, date: when(current), venue: current.venue || 'To be confirmed' };
+        ticket = { code: res.code, seats: res.seats, name: body.p_name, title: current.title, date: when(current), venue: current.venue || 'To be confirmed', parentPermission: !!extra };
         showTicket(); loadSeats().then(render);
       })
       .catch(function (err) {
@@ -193,7 +224,8 @@
       '<div class="qrc">' + q.createSvgTag({ cellSize: 4, margin: 2, scalable: true }) + '</div>' +
       '<div class="code">' + esc(t.code) + '</div>' +
       '<dl><dt>Event</dt><dd>' + esc(t.title) + '</dd><dt>Date</dt><dd>' + esc(t.date) + '</dd><dt>Venue</dt><dd>' + esc(t.venue) + '</dd>' +
-      '<dt>Name</dt><dd>' + esc(t.name) + '</dd><dt>Seats</dt><dd>' + t.seats + '</dd></dl></div>' +
+      '<dt>Name</dt><dd>' + esc(t.name) + '</dd><dt>Seats</dt><dd>' + t.seats + '</dd>' +
+      (t.parentPermission ? '<dt>Parent permission</dt><dd>Parent permission given</dd>' : '') + '</dl></div>' +
       '<div class="acts"><button class="btn bc" type="button" data-png>' + ICO.down + '<span>Download ticket</span></button><button class="btn bo3" type="button" data-print>' + ICO.print + '<span>Print or save as PDF</span></button>' +
       '<button class="btn bo3" type="button" data-invite>' + ICO.users + '<span>Invite a friend</span></button></div>' +
       '<p class="note">Please keep this code. CYA does not send tickets by email or WhatsApp.</p></div>';
@@ -242,6 +274,7 @@
   function downloadPng() {
     var t = ticket, q = qrSvg(t.code), n = q.getModuleCount(), W = 640, cell = Math.floor(300 / (n + 4)), qs = cell * (n + 4);
     var c = document.createElement('canvas'), x = c.getContext('2d'), lines = [['Event', t.title], ['Date', t.date], ['Venue', t.venue], ['Name', t.name], ['Seats', String(t.seats)]];
+    if (t.parentPermission) lines.push(['Parent permission', 'Parent permission given']);
     c.width = W; c.height = 300 + qs + lines.length * 64;
     x.fillStyle = '#fffaf4'; x.fillRect(0, 0, W, c.height);
     x.fillStyle = '#0b3c8c'; x.fillRect(0, 0, W, 90);
